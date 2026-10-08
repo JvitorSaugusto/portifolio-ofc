@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfólio profissional de João Vitor, Desenvolvedor Backend com experiência em Python, Django, FastAPI, Docker, APIs REST, automação e IA local." />
+  <meta name="author" content="João Vitor Santos Augusto" />
+  <meta name="theme-color" content="#0b1020" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="João Vitor | Desenvolvedor Backend" />
+  <meta property="og:description" content="Portfólio profissional de João Vitor, com foco em backend, APIs, automação, infraestrutura e IA local." />
+  <meta property="og:locale" content="pt_BR" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b1020'/%3E%3Cpath d='M18 20h10l8 8 8-8h10L41 34l13 14H43l-7-8-7 8H18l13-14z' fill='%2367e8f9'/%3E%3C/svg%3E" />
+
+  <!-- Tailwind via CDN: compatível com hospedagem estática do GitHub Pages. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'monospace']
+          },
+          boxShadow: {
+            glow: '0 0 0 1px rgba(103,232,249,.08), 0 24px 80px rgba(15,23,42,.42)'
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-cyan-300 selection:text-slate-950">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Header / Navegação -->
+  <header id="site-header" class="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-slate-950/75 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10">
+      <a href="#inicio" class="group flex items-center gap-3" aria-label="Ir para o início">
+        <span class="grid h-10 w-10 place-items-center rounded-xl border border-cyan-300/20 bg-cyan-300/10 font-mono text-sm font-semibold text-cyan-200 transition group-hover:border-cyan-300/40 group-hover:bg-cyan-300/15">JV</span>
+        <span class="hidden text-sm font-semibold tracking-wide text-slate-200 sm:block">João Vitor</span>
+      </a>
+
+      <button
+        id="menu-toggle"
+        type="button"
+        class="inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-200 transition hover:border-cyan-300/30 hover:text-cyan-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 md:hidden"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="main-nav"
+      >
+        <svg id="menu-open-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+        </svg>
+        <svg id="menu-close-icon" class="hidden" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+        </svg>
+      </button>
+
+      <nav id="main-nav" class="absolute left-4 right-4 top-[76px] hidden rounded-2xl border border-white/10 bg-slate-900/95 p-3 shadow-2xl shadow-black/30 md:static md:block md:border-0 md:bg-transparent md:p-0 md:shadow-none" aria-label="Navegação principal">
+        <ul class="flex flex-col gap-1 md:flex-row md:items-center md:gap-7">
+          <li><a class="nav-link" href="#sobre">Sobre</a></li>
+          <li><a class="nav-link" href="#tecnologias">Tecnologias</a></li>
+          <li><a class="nav-link" href="#projetos">Projetos</a></li>
+          <li><a class="nav-link" href="#experiencia">Experiência</a></li>
+          <li><a class="nav-link" href="#formacao">Formação</a></li>
+          <li><a class="nav-contact" href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- Hero -->
+    <section id="inicio" class="relative overflow-hidden pt-32 sm:pt-40">
+      <div class="hero-grid absolute inset-0 -z-10"></div>
+      <div class="mx-auto grid max-w-7xl gap-14 px-5 pb-24 sm:px-8 lg:grid-cols-[1.1fr_.9fr] lg:items-center lg:px-10 lg:pb-32">
+        <div class="reveal">
+          <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/15 bg-cyan-300/5 px-3.5 py-2 font-mono text-xs text-cyan-200">
+            <span class="status-dot" aria-hidden="true"></span>
+            Desenvolvedor Backend · RJ, Brasil
+          </div>
+
+          <p class="mb-4 font-mono text-sm tracking-[0.18em] text-cyan-300/80">JOÃO VITOR</p>
+          <h1 class="max-w-4xl text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
+            Backend que transforma<br class="hidden sm:block" /> problemas em sistemas.
+          </h1>
+          <p class="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+            Desenvolvedor Full Stack com experiência profissional em <strong class="text-slate-100">Python, Django, FastAPI, Next.js e Docker</strong>, atuando com APIs REST, automação, ETL, otimização de performance e arquitetura de sistemas.
+          </p>
+
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="#projetos" class="primary-button">
+              Ver projetos
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </a>
+            <a href="mailto:jvitorsaugusto@outlook.com" class="secondary-button">
+              Entrar em contato
+            </a>
+          </div>
+
+          <div class="mt-10 flex flex-wrap gap-2.5" aria-label="Principais especialidades">
+            <span class="skill-pill">Python</span>
+            <span class="skill-pill">Django</span>
+            <span class="skill-pill">FastAPI</span>
+            <span class="skill-pill">Docker</span>
+            <span class="skill-pill">APIs REST</span>
+            <span class="skill-pill">IA local</span>
+          </div>
+        </div>
+
+        <!-- Bloco visual em estilo terminal -->
+        <div class="reveal reveal-delay-1 lg:justify-self-end">
+          <div class="terminal-card">
+            <div class="flex items-center justify-between border-b border-white/8 px-5 py-4">
+              <div class="flex items-center gap-2" aria-label="Janela de terminal">
+                <span class="h-2.5 w-2.5 rounded-full bg-red-400/75"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-amber-300/75"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-emerald-300/75"></span>
+              </div>
+              <span class="font-mono text-[11px] text-slate-500">backend.profile</span>
+            </div>
+            <div class="space-y-3 px-5 py-6 font-mono text-xs leading-7 sm:text-sm">
+              <div><span class="text-slate-500">$</span> <span class="text-cyan-200">whoami</span></div>
+              <div class="pl-4 text-slate-300">joao-vitor / backend-developer</div>
+              <div><span class="text-slate-500">$</span> <span class="text-cyan-200">stack --core</span></div>
+              <div class="pl-4"><span class="text-emerald-300">python</span> · django · fastapi · docker</div>
+              <div><span class="text-slate-500">$</span> <span class="text-cyan-200">focus --current</span></div>
+              <div class="pl-4 text-slate-300">APIs · automação · IA local · arquitetura</div>
+              <div><span class="text-slate-500">$</span> <span class="text-cyan-200">git status</span></div>
+              <div class="pl-4 text-emerald-300">● construindo soluções</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="section-shell">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+        <div class="section-heading reveal">
+          <span class="section-kicker">01 / SOBRE</span>
+          <h2>Experiência de infraestrutura. Mentalidade de desenvolvimento.</h2>
+          <p>Uma trajetória que combina software, operação e visão de produção.</p>
+        </div>
+
+        <div class="grid gap-6 lg:grid-cols-[1.2fr_.8fr]">
+          <article class="panel reveal">
+            <p class="text-base leading-8 text-slate-300">
+              Desenvolvedor Backend com experiência profissional em Python, Django, FastAPI, Docker e Next.js, atuando com otimização de performance, arquitetura de APIs, ETL e automação de processos em sistemas industriais.
+            </p>
+            <p class="mt-5 text-base leading-8 text-slate-300">
+              Também possuo experiência prática com Docker e infraestrutura, incluindo configuração de servidores do zero, implantação de Nginx, redes e provisionamento automatizado de containers e ambientes isolados por cliente.
+            </p>
+            <p class="mt-5 text-base leading-8 text-slate-300">
+              Antes de migrar para desenvolvimento, passei <strong class="text-white">3 anos em Infraestrutura e Suporte</strong>. Essa experiência consolidou minha visão sobre estabilidade, monitoramento, deploy e manutenção de sistemas em produção.
+            </p>
+          </article>
+
+          <aside class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+            <div class="stat-card reveal reveal-delay-1">
+              <span class="stat-value">3 anos</span>
+              <span class="stat-label">Infraestrutura e Suporte</span>
+            </div>
+            <div class="stat-card reveal reveal-delay-2">
+              <span class="stat-value">Backend</span>
+              <span class="stat-label">Python · Django · FastAPI · PHP</span>
+            </div>
+            <div class="stat-card reveal reveal-delay-3">
+              <span class="stat-value">IA local</span>
+              <span class="stat-label">LangGraph · Ollama · agentes</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tecnologias -->
+    <section id="tecnologias" class="section-shell section-muted">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+        <div class="section-heading reveal">
+          <span class="section-kicker">02 / STACK</span>
+          <h2>Ferramentas que uso para construir e operar sistemas.</h2>
+          <p>Organizadas por contexto de aplicação para deixar o foco claro.</p>
+        </div>
+
+        <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          <article class="tech-card reveal">
+            <div class="tech-icon" aria-hidden="true">PY</div>
+            <div>
+              <h3>Backend</h3>
+              <p>Python, Django, Django REST Framework, FastAPI, PHP, Laravel, Blade, Eloquent, SQLAlchemy.</p>
+            </div>
+          </article>
+          <article class="tech-card reveal reveal-delay-1">
+            <div class="tech-icon" aria-hidden="true">AI</div>
+            <div>
+              <h3>IA / LLMs</h3>
+              <p>LangGraph, LangChain, Ollama, LLMs Locais, Agentic Workflows, Tool Calling, RAG e agentes de IA.</p>
+            </div>
+          </article>
+          <article class="tech-card reveal reveal-delay-2">
+            <div class="tech-icon" aria-hidden="true">DO</div>
+            <div>
+              <h3>Infraestrutura</h3>
+              <p>Docker, Docker Compose, Nginx, provisionamento de containers e deploy.</p>
+            </div>
+          </article>
+          <article class="tech-card reveal">
+            <div class="tech-icon" aria-hidden="true">DB</div>
+            <div>
+              <h3>Banco de dados</h3>
+              <p>PostgreSQL, MySQL, SQLite e SQL.</p>
+            </div>
+          </article>
+          <article class="tech-card reveal reveal-delay-1">
+            <div class="tech-icon" aria-hidden="true">RQ</div>
+            <div>
+              <h3>Processamento</h3>
+              <p>Celery e Redis para tarefas assíncronas e processamento em background.</p>
+            </div>
+          </article>
+          <article class="tech-card reveal reveal-delay-2">
+            <div class="tech-icon" aria-hidden="true">{}</div>
+            <div>
+              <h3>Frontend & outros</h3>
+              <p>JavaScript, HTML, CSS, Next.js, Java, Spring Boot, Git e GitHub.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projetos -->
+    <section id="projetos" class="section-shell">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+        <div class="section-heading reveal">
+          <span class="section-kicker">03 / PROJETOS</span>
+          <h2>Projetos que mostram como penso além do código.</h2>
+          <p>Do processamento industrial à orquestração de agentes de IA.</p>
+        </div>
+
+        <div class="mb-7 flex flex-wrap gap-2 reveal" role="group" aria-label="Filtrar projetos">
+          <button class="filter-button is-active" type="button" data-filter="all">Todos</button>
+          <button class="filter-button" type="button" data-filter="backend">Backend</button>
+          <button class="filter-button" type="button" data-filter="ia">IA</button>
+          <button class="filter-button" type="button" data-filter="php">PHP / Laravel</button>
+        </div>
+
+        <div id="project-grid" class="grid gap-5 lg:grid-cols-3">
+          <article class="project-card reveal" data-project-categories="backend">
+            <div class="project-topline">
+              <span class="project-number">01</span>
+              <span class="project-label">Backend / Indústria</span>
+            </div>
+            <h3>Simulador Industrial para Cálculo de OEE</h3>
+            <p>Simulador de linhas industriais em tempo real com geração de OPs, falhas de máquinas, histórico de OEE e processamento assíncrono.</p>
+            <div class="tag-row">
+              <span>Python</span><span>FastAPI</span><span>SQLAlchemy</span><span>Celery</span><span>Redis</span><span>Docker</span>
+            </div>
+            <a class="project-link" href="https://github.com/JvitorSaugusto/Simulador-Industrial-API" target="_blank" rel="noopener noreferrer" aria-label="Abrir repositório do Simulador Industrial para Cálculo de OEE">
+              Ver no GitHub <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+
+          <article class="project-card reveal reveal-delay-1" data-project-categories="backend ia">
+            <div class="project-topline">
+              <span class="project-number">02</span>
+              <span class="project-label">IA / Automação</span>
+            </div>
+            <h3>Orquestrador de IA Local e Autônomo</h3>
+            <p>Orquestrador de múltiplos LLMs com LangGraph, roteamento, memória persistente e processamento assíncrono, capaz de analisar código, editar arquivos e realizar commits via Git.</p>
+            <div class="tag-row">
+              <span>Python</span><span>FastAPI</span><span>LangGraph</span><span>Celery</span><span>Redis</span><span>PostgreSQL</span><span>Ollama</span>
+            </div>
+            <a class="project-link" href="https://github.com/JvitorSaugusto/my-local-assistant" target="_blank" rel="noopener noreferrer" aria-label="Abrir repositório do Orquestrador de IA Local e Autônomo">
+              Ver no GitHub <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+
+          <article class="project-card reveal reveal-delay-2" data-project-categories="php">
+            <div class="project-topline">
+              <span class="project-number">03</span>
+              <span class="project-label">PHP / Laravel</span>
+            </div>
+            <h3>Aplicação Web com PHP e Laravel</h3>
+            <p>Projetos desenvolvidos no SENAI utilizando Laravel para construção de aplicação monolítica e APIs REST.</p>
+            <div class="tag-row">
+              <span>PHP</span><span>Laravel</span><span>Blade</span><span>Eloquent</span><span>REST</span><span>SQL</span>
+            </div>
+            <span class="project-link project-link-muted">Projetos acadêmicos / SENAI</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experiência -->
+    <section id="experiencia" class="section-shell section-muted">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+        <div class="section-heading reveal">
+          <span class="section-kicker">04 / EXPERIÊNCIA</span>
+          <h2>Da infraestrutura ao desenvolvimento de software.</h2>
+          <p>Experiência apresentada em ordem cronológica, com foco no impacto técnico.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-period">OUT 2026 — ATUAL</div>
+            <div class="timeline-card">
+              <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <h3>Desenvolvedor de software</h3>
+                  <p class="company">eSolvere Tecnologia · Remoto</p>
+                </div>
+                <span class="role-badge">Tempo integral</span>
+              </div>
+              <div class="experience-grid">
+                <div>
+                  <span class="experience-title">Fallback para produção não identificada</span>
+                  <p>Arquitetura de fallback com serviços Dockerizados, backend principal na AWS e mock de leitura via APIs REST, preservando o fluxo principal e reduzindo divergências entre produção física e registros de MES/OEE.</p>
+                </div>
+                <div>
+                  <span class="experience-title">Performance & arquitetura</span>
+                  <p>Pré-carregamento e cache em <code>get_queryset</code>, eliminação de N+1 e auditoria estrutural com migração de padrões RPC para RESTful, unificação de endpoints e correção de inconsistências.</p>
+                </div>
+                <div>
+                  <span class="experience-title">Automação</span>
+                  <p>Lógica de agendamento de Ordens de Serviço e notificações, com cálculos de periodicidade e execução em cadeia usando <code>dateutil</code>.</p>
+                </div>
+                <div>
+                  <span class="experience-title">Full Stack</span>
+                  <p>Módulo de visualização de agendamentos industriais com Django + FullCalendar, filtros, legendas, busca global e gráfico Gantt para controle de produção.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-period">OUT 2025 — OUT 2026</div>
+            <div class="timeline-card">
+              <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <h3>Desenvolvedor de software</h3>
+                  <p class="company">eSolvere Tecnologia · Remoto</p>
+                </div>
+                <span class="role-badge">Estágio</span>
+              </div>
+              <p class="mt-5 text-sm leading-7 text-slate-300">Atuação nos mesmos contextos técnicos de backend, automação, performance, arquitetura e desenvolvimento de interfaces descritos para a experiência na eSolvere.</p>
+              <div class="mt-5 tag-row">
+                <span>Python</span><span>Django REST Framework</span><span>Docker</span><span>APIs REST</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-period">ABR 2023 — DEZ 2024</div>
+            <div class="timeline-card">
+              <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <h3>Assistente administrativo de TI</h3>
+                  <p class="company">Perfect Pay · Resende, RJ</p>
+                </div>
+                <span class="role-badge">Tempo integral</span>
+              </div>
+              <p class="mt-5 text-sm leading-7 text-slate-300">Segurança da informação, infraestrutura, inventário, controle de estoque de eletrônicos, suporte técnico, manutenção preventiva de ativos, planos de telefonia corporativa, assinaturas digitais e controle de NR17.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-period">ABR 2022 — ABR 2023</div>
+            <div class="timeline-card">
+              <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <h3>Estagiário de TI</h3>
+                  <p class="company">Perfect Pay · Resende, RJ</p>
+                </div>
+                <span class="role-badge">Estágio</span>
+              </div>
+              <p class="mt-5 text-sm leading-7 text-slate-300">Segurança da informação, inventário, controle de materiais, suporte técnico, manutenção preventiva, troca de peças de computadores, cotação de materiais e criação de assinaturas digitais.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formação -->
+    <section id="formacao" class="section-shell">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+        <div class="section-heading reveal">
+          <span class="section-kicker">05 / FORMAÇÃO</span>
+          <h2>Formação acadêmica e técnica.</h2>
+        </div>
+
+        <div class="grid gap-4 md:grid-cols-3">
+          <article class="education-card reveal">
+            <span class="education-year">2021 — 2026</span>
+            <h3>Sistemas de Informação</h3>
+            <p>Universidade Estácio de Sá</p>
+            <span class="education-status">Em andamento</span>
+          </article>
+          <article class="education-card reveal reveal-delay-1">
+            <span class="education-year">2026 — 2027</span>
+            <h3>Técnico em Desenvolvimento de Sistemas</h3>
+            <p>SENAI-RJ</p>
+            <span class="education-status">Em andamento</span>
+          </article>
+          <article class="education-card reveal reveal-delay-2">
+            <span class="education-year">2025</span>
+            <h3>Administrador de Banco de Dados (DBA)</h3>
+            <p>SENAI</p>
+            <span class="education-status">Concluído</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="section-shell contact-section">
+      <div class="mx-auto max-w-5xl px-5 sm:px-8 lg:px-10">
+        <div class="contact-panel reveal">
+          <span class="section-kicker">06 / CONTATO</span>
+          <h2>Vamos conversar sobre tecnologia?</h2>
+          <p>Para oportunidades, projetos e assuntos profissionais, você pode falar comigo pelos canais abaixo.</p>
+          <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <a class="primary-button" href="mailto:jvitorsaugusto@outlook.com">jvitorsaugusto@outlook.com</a>
+            <a class="secondary-button" href="https://github.com/JvitorSaugusto" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a class="secondary-button" href="https://www.linkedin.com/in/jo%C3%A3o-vitor-santos-augusto-784128224/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 py-8">
+    <div class="mx-auto flex max-w-7xl flex-col gap-4 px-5 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
+      <p>© <span id="current-year">2026</span> João Vitor Santos Augusto.</p>
+      <a href="#inicio" class="footer-link">Voltar ao topo ↑</a>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="back-to-top" type="button" aria-label="Voltar ao topo">
+    ↑
+  </button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
