@@ -10,13 +10,12 @@
   <meta property="og:title" content="João Vitor — Backend, automação e IA aplicada" />
   <meta property="og:description" content="Sistemas bem construídos, automação de processos e inteligência artificial aplicada a problemas reais." />
   <meta property="og:locale" content="pt_BR" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%2316765a'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='27' font-weight='700' fill='white'%3EJV.%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%2316765a'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='27' font-weight='700' fill='white'%3EJV.%3C/text%3E%3C/svg%3E" />
   <script>
     (() => {
       document.documentElement.classList.add('js-enabled');
       try {
         const savedTheme = localStorage.getItem('portfolio-theme');
-        // Define 'light' como padrão obrigatório se não houver tema salvo
         document.documentElement.dataset.theme = savedTheme || 'light';
       } catch (_) {
         document.documentElement.dataset.theme = 'light';
@@ -35,7 +34,7 @@
   <header class="site-header" id="site-header">
     <div class="container header-inner">
       <a class="brand" href="#inicio" aria-label="João Vitor — início">
-        <span class="brand-mark">JV<span>.</span></span>
+        <span class="brand-mark"><span class="brand-mark-text">JV<i class="brand-dot">.</i></span></span>
         <span class="brand-name">João Vitor <span>· Desenvolvedor</span></span>
       </a>
 
@@ -61,7 +60,14 @@
 
   <main id="conteudo">
     <section class="hero section-space" id="inicio" aria-labelledby="hero-title">
-      <div class="hero-grid-pattern" aria-hidden="true"></div>
+      <div class="hero-waves" aria-hidden="true">
+        <svg viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <path d="M-100 180 C 320 40, 620 340, 1080 160 C 1320 65, 1480 180, 1600 140" stroke="currentColor" stroke-width="1.5" stroke-dasharray="6 6" opacity="0.45" />
+          <path d="M-100 280 C 260 420, 740 80, 1140 280 C 1360 390, 1480 240, 1600 290" stroke="currentColor" stroke-width="1.5" opacity="0.65" />
+          <path d="M-100 390 C 380 230, 700 490, 1180 330 C 1380 260, 1500 350, 1600 320" stroke="currentColor" stroke-width="1.2" opacity="0.35" />
+          <path d="M-100 90 C 420 260, 820 -40, 1260 130 C 1420 190, 1520 90, 1600 110" stroke="currentColor" stroke-width="1" opacity="0.25" />
+        </svg>
+      </div>
       <div class="container hero-layout">
         <div class="hero-copy reveal">
           <p class="eyebrow"><span class="eyebrow-dot"></span> PYTHON · PHP · IA APLICADA</p>
@@ -81,30 +87,64 @@
           </div>
         </div>
 
-        <div class="hero-visual reveal reveal-delay-1" aria-label="Painel visual ilustrativo de uma API">
-          <div class="visual-orbit orbit-one"></div>
-          <div class="visual-orbit orbit-two"></div>
-          <div class="system-card">
-            <div class="system-card-header">
-              <div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div>
-              <span class="mono">worker_node.py</span>
-              <span class="system-status"><span></span> active</span>
+        <div class="hero-visual reveal reveal-delay-1" aria-label="Diagrama de arquitetura de microsserviços, filas assíncronas e IA">
+          <div class="arch-diagram">
+            <svg class="arch-connections" viewBox="0 0 440 360" fill="none" aria-hidden="true">
+              <path class="arch-line" d="M220 180 L105 85" />
+              <path class="arch-line" d="M220 180 L335 85" />
+              <path class="arch-line" d="M220 180 L105 275" />
+              <path class="arch-line" d="M220 180 L335 275" />
+              <circle class="arch-pulse pulse-1" r="4" cx="220" cy="180" />
+              <circle class="arch-pulse pulse-2" r="4" cx="220" cy="180" />
+              <circle class="arch-pulse pulse-3" r="4" cx="220" cy="180" />
+              <circle class="arch-pulse pulse-4" r="4" cx="220" cy="180" />
+            </svg>
+
+            <div class="arch-hub">
+              <div class="arch-hub-top">
+                <span class="hub-dot"></span>
+                <span class="mono">CORE ENGINE</span>
+              </div>
+              <strong>API & Microservices</strong>
+              <span>FastAPI · Django · Docker</span>
+              <div class="arch-metrics">
+                <div><small>STATUS</small><b>Healthy · 99.9%</b></div>
+                <div><small>LATENCY</small><b>14ms avg</b></div>
+              </div>
             </div>
-            <div class="system-code">
-              <p><span class="line-no">01</span> <span class="code-purple">@celery.task</span></p>
-              <p><span class="line-no">02</span> <span class="code-purple">async def</span> <span class="code-green">process_oee_metrics</span>(op_id):</p>
-              <p><span class="line-no">03</span> &nbsp;&nbsp; data = <span class="code-purple">await</span> db.fetch(op_id)</p>
-              <p><span class="line-no">04</span> &nbsp;&nbsp; state = agent.evaluate(data)</p>
-              <p><span class="line-no">05</span> </p>
-              <p><span class="line-no">06</span> &nbsp;&nbsp; <span class="code-purple">if</span> state.anomaly_detected:</p>
-              <p><span class="line-no">07</span> &nbsp;&nbsp;&nbsp;&nbsp; alert_system.dispatch(state)</p>
-              <p class="code-comment"><span class="line-no">08</span> # Integrando regras de negócio e IA</p>
+
+            <div class="arch-node node-tl">
+              <span class="node-badge node-green">⚡</span>
+              <div>
+                <strong>Async Workers</strong>
+                <small>Celery · Redis Queues</small>
+              </div>
             </div>
-            <div class="system-card-footer"><span>FastAPI</span><span>·</span><span>Celery</span><span>·</span><span>LLMs</span></div>
+
+            <div class="arch-node node-tr">
+              <span class="node-badge node-violet">✳</span>
+              <div>
+                <strong>AI Orchestrator</strong>
+                <small>LangGraph · Ollama</small>
+              </div>
+            </div>
+
+            <div class="arch-node node-bl">
+              <span class="node-badge node-amber">◫</span>
+              <div>
+                <strong>Data Layer</strong>
+                <small>PostgreSQL · MySQL</small>
+              </div>
+            </div>
+
+            <div class="arch-node node-br">
+              <span class="node-badge node-blue">⇄</span>
+              <div>
+                <strong>Industrial / Web</strong>
+                <small>MES/OEE · Next.js</small>
+              </div>
+            </div>
           </div>
-          <div class="floating-note note-stack"><span class="note-icon">{ }</span><span><strong>Backend first</strong><small>Regra de negócio e arquitetura</small></span></div>
-          <div class="floating-note note-ai"><span class="note-icon">✳</span><span><strong>IA aplicada</strong><small>Do dado à decisão</small></span></div>
-          <div class="visual-caption mono">BUILD WITH PURPOSE / 001</div>
         </div>
       </div>
       <div class="container hero-bottom reveal">
@@ -129,15 +169,15 @@
           <aside class="about-facts" aria-label="Resumo profissional">
             <div class="fact-card reveal reveal-delay-1">
               <span class="fact-symbol" style="font-size: 32px; color: var(--accent); margin-bottom: 6px;">⚙️</span>
-              <span class="fact-title">Código em Produção</span>
-              <span class="fact-label">APIs, automações e microsserviços rodando e resolvendo cenários reais.</span>
+              <span class="fact-title">Engenharia em Produção</span>
+              <span class="fact-label">Microsserviços, migração de legados (Django para FastAPI/Next.js) e integrações industriais ativas.</span>
               <span class="fact-index mono">DEV EXPERIENCE / 01</span>
             </div>
             <div class="fact-card fact-card-accent reveal reveal-delay-2">
               <span class="fact-symbol">↗</span>
-              <span class="fact-title">Visão 360º</span>
-              <span class="fact-label">Anos de base em infraestrutura ajudam a criar sistemas à prova de falhas.</span>
-              <span class="fact-index mono">MINDSET / 02</span>
+              <span class="fact-title">Do código ao deploy</span>
+              <span class="fact-label">Arquitetura pensada para escalar, com containers dinâmicos, filas e visão real de operação.</span>
+              <span class="fact-index mono">ARCHITECTURE / 02</span>
             </div>
           </aside>
         </div>
@@ -152,12 +192,12 @@
           <p class="section-intro">Minha base está no backend; a stack se expande conforme o problema pede.</p>
         </div>
         <div class="stack-grid">
-          <article class="stack-card reveal"><div class="stack-card-top"><span class="stack-icon stack-icon-green">Py</span><span class="stack-number mono">01</span></div><h3>Backend & APIs</h3><p>Construção de serviços, regras de negócio e APIs bem estruturadas.</p><div class="chip-list"><span>Python</span><span>Django</span><span>FastAPI</span><span>Java</span><span>Spring</span><span>PHP</span></div></article>
+          <article class="stack-card reveal"><div class="stack-card-top"><span class="stack-icon stack-icon-green">Py</span><span class="stack-number mono">01</span></div><h3>Backend & APIs</h3><p>Construção de serviços, regras de negócio e APIs bem estruturadas.</p><div class="chip-list"><span>Python</span><span>Django</span><span>FastAPI</span><span>DRF</span><span>Java</span><span>Spring Boot</span><span>PHP</span><span>Laravel</span></div></article>
           <article class="stack-card reveal reveal-delay-1"><div class="stack-card-top"><span class="stack-icon stack-icon-violet">✳</span><span class="stack-number mono">02</span></div><h3>IA & LLMs</h3><p>Orquestração de modelos e integração de inteligência a fluxos de trabalho.</p><div class="chip-list"><span>LangGraph</span><span>LangChain</span><span>Ollama</span><span>RAG</span><span>Tool calling</span><span>Agentes</span></div></article>
-          <article class="stack-card reveal reveal-delay-2"><div class="stack-card-top"><span class="stack-icon stack-icon-blue">⌘</span><span class="stack-number mono">03</span></div><h3>Infra & Deploy</h3><p>Ambientes reproduzíveis, tarefas assíncronas e execução confiável.</p><div class="chip-list"><span>Docker</span><span>Celery</span><span>Nginx</span><span>Redis</span><span>Git</span></div></article>
-          <article class="stack-card reveal"><div class="stack-card-top"><span class="stack-icon stack-icon-amber">◫</span><span class="stack-number mono">04</span></div><h3>Dados & integração</h3><p>Persistência, consulta e integração entre serviços e sistemas.</p><div class="chip-list"><span>PostgreSQL</span><span>MySQL</span><span>SQLite</span><span>ETL</span><span>REST</span></div></article>
-          <article class="stack-card reveal reveal-delay-1"><div class="stack-card-top"><span class="stack-icon stack-icon-rose">{ }</span><span class="stack-number mono">05</span></div><h3>Frontend de produto</h3><p>Interfaces funcionais para entregar uma experiência completa ao usuário.</p><div class="chip-list"><span>JavaScript</span><span>Next.js</span><span>HTML</span><span>CSS</span></div></article>
-          <article class="stack-card reveal reveal-delay-2"><div class="stack-card-top"><span class="stack-icon stack-icon-neutral">↻</span><span class="stack-number mono">06</span></div><h3>Em aprofundamento</h3><p>Tecnologias que utilizo no serviço e venho expandindo nos estudos.</p><div class="chip-list"><span>Next.js</span><span>React</span><span>AWS</span><span>Nginx avançado</span></div></article>
+          <article class="stack-card reveal reveal-delay-2"><div class="stack-card-top"><span class="stack-icon stack-icon-blue">⌘</span><span class="stack-number mono">03</span></div><h3>Infra & Processamento</h3><p>Ambientes reproduzíveis, versionamento, filas assíncronas e execução confiável.</p><div class="chip-list"><span>Docker</span><span>Compose</span><span>Celery</span><span>Redis</span><span>Git</span><span>GitHub</span></div></article>
+          <article class="stack-card reveal"><div class="stack-card-top"><span class="stack-icon stack-icon-amber">◫</span><span class="stack-number mono">04</span></div><h3>Dados & Integração</h3><p>Persistência, modelagem, ORM e integração entre serviços e sistemas.</p><div class="chip-list"><span>PostgreSQL</span><span>MySQL</span><span>SQLite</span><span>SQLAlchemy</span><span>ETL</span><span>REST</span></div></article>
+          <article class="stack-card reveal reveal-delay-1"><div class="stack-card-top"><span class="stack-icon stack-icon-rose">{ }</span><span class="stack-number mono">05</span></div><h3>Frontend de Produto</h3><p>Interfaces funcionais e painéis operacionais para entregar uma experiência completa.</p><div class="chip-list"><span>JavaScript</span><span>HTML</span><span>CSS</span><span>FullCalendar</span><span>Frappe Gantt</span></div></article>
+          <article class="stack-card reveal reveal-delay-2"><div class="stack-card-top"><span class="stack-icon stack-icon-neutral">↻</span><span class="stack-number mono">06</span></div><h3>Em aprofundamento</h3><p>Tecnologias que já utilizo no trabalho diário e sigo aprofundando nos estudos.</p><div class="chip-list"><span>Next.js</span><span>Nginx</span><span>AWS</span><span>Arquitetura Cloud</span></div></article>
         </div>
       </div>
     </section>
@@ -250,15 +290,14 @@
       <div class="container">
         <div class="section-heading reveal">
           <p class="section-kicker">04 / EXPERIÊNCIA</p>
-          <h2 id="experience-title">Da infraestrutura ao software<br /><span class="heading-muted">em produção.</span></h2>
-          <p class="section-intro">Uma trajetória que conecta suporte, operação e desenvolvimento profissional de sistemas.</p>
+          <h2 id="experience-title">Engenharia de software<br /><span class="heading-muted">aplicada à operação real.</span></h2>
+          <p class="section-intro">Foco em desenvolvimento backend, arquitetura de microsserviços e modernização de sistemas, apoiado por uma base sólida em infraestrutura.</p>
         </div>
         <div class="experience-layout">
           <div class="timeline">
             <article class="timeline-item reveal"><div class="timeline-marker"></div><div class="timeline-date mono">OUT 2026 — ATUAL</div><div class="timeline-card"><div class="timeline-heading"><div><h3>Desenvolvedor BackEnd</h3><p>eSolvere Tecnologia <span>· Remoto</span></p></div><span class="role-badge role-current">Atual</span></div><p class="timeline-summary">Atuação profissional na engenharia e arquitetura de soluções backend para o contexto industrial, com foco em automação, migração de legados e integrações escaláveis.</p><div class="timeline-work-grid"><div><strong>Microsserviços & Cloud</strong><p>Desenvolvimento de microsserviços Dockerizados para fallback de produção e provisionamento dinâmico de containers Django por usuário, integrando APIs REST, AWS e sistemas MES/OEE.</p></div><div><strong>Produtos & Visualização</strong><p>Desenvolvimento de módulos operacionais avançados com FullCalendar e Frappe Gantt, gerando novo módulo comercial adicional (+37%, R$ 822/operação).</p></div><div><strong>Migração & Modernização</strong><p>Migração bem-sucedida de módulos de Django Monólito para FastAPI e Next.js, corrigindo incompatibilidades arquiteturais e implementando novas funcionalidades.</p></div></div><div class="project-tags"><span>Python</span><span>FastAPI</span><span>Django</span><span>Next.js</span><span>Docker</span></div></div></article>
-            <article class="timeline-item reveal"><div class="timeline-marker"></div><div class="timeline-date mono">OUT 2025 — OUT 2026</div><div class="timeline-card"><div class="timeline-heading"><div><h3>Estagiário de Desenvolvimento de Software</h3><p>eSolvere Tecnologia <span>· Remoto</span></p></div><span class="role-badge">Estágio</span></div><p class="timeline-summary">Atuação ativa no desenvolvimento backend e full stack, executando as mesmas funções de engenharia de software da posição atual (microsserviços, integrações AWS, modernização de módulos).</p><div class="project-tags"><span>Python</span><span>Django</span><span>FastAPI</span><span>Next.js</span><span>Docker</span></div></div></article>
-            <article class="timeline-item reveal"><div class="timeline-marker"></div><div class="timeline-date mono">ABR 2023 — DEZ 2024</div><div class="timeline-card"><div class="timeline-heading"><div><h3>Assistente de TI</h3><p>Perfect Pay <span>· Resende, RJ</span></p></div><span class="role-badge">Infraestrutura</span></div><p class="timeline-summary">Suporte técnico, segurança da informação, inventário e manutenção de ativos, assinaturas digitais, telefonia e controles operacionais de TI.</p></div></article>
-            <article class="timeline-item reveal"><div class="timeline-marker"></div><div class="timeline-date mono">ABR 2022 — ABR 2023</div><div class="timeline-card"><div class="timeline-heading"><div><h3>Estagiário de TI</h3><p>Perfect Pay <span>· Resende, RJ</span></p></div><span class="role-badge">Estágio</span></div><p class="timeline-summary">Suporte aos usuários, manutenção preventiva e troca de componentes, cotação de materiais e controle de equipamentos e materiais.</p></div></article>
+            <article class="timeline-item reveal"><div class="timeline-marker"></div><div class="timeline-date mono">OUT 2025 — OUT 2026</div><div class="timeline-card"><div class="timeline-heading"><div><h3>Estagiário de Desenvolvimento de Software</h3><p>eSolvere Tecnologia <span>· Remoto</span></p></div><span class="role-badge">Estágio Dev</span></div><p class="timeline-summary">Atuação direta no desenvolvimento backend e full stack em produção: criação de APIs e microsserviços Dockerizados, regras de detecção de queda de velocidade e ociosidade industrial, integrações AWS e migração de monólito para FastAPI e Next.js.</p><div class="project-tags"><span>Python</span><span>Django</span><span>FastAPI</span><span>Next.js</span><span>Docker</span></div></div></article>
+            <article class="timeline-item reveal"><div class="timeline-marker"></div><div class="timeline-date mono">ABR 2022 — DEZ 2024</div><div class="timeline-card"><div class="timeline-heading"><div><h3>Assistente & Estagiário de TI</h3><p>Perfect Pay <span>· Resende, RJ</span></p></div><span class="role-badge">Base de Infra</span></div><p class="timeline-summary">2 anos e 8 meses garantindo a estabilidade operacional, segurança da informação, redes e suporte técnico — base que hoje sustenta minha visão prática de deploy e arquitetura.</p></div></article>
           </div>
           <aside class="experience-aside reveal reveal-delay-1"><p class="section-kicker">O QUE EU LEVO PARA O CÓDIGO</p><div class="principle"><span>01</span><div><strong>Visão de operação</strong><p>Uma funcionalidade também precisa ser implantada, monitorada e mantida.</p></div></div><div class="principle"><span>02</span><div><strong>Automação útil</strong><p>Menos trabalho repetitivo e mais consistência nos processos reais.</p></div></div><div class="principle"><span>03</span><div><strong>Arquitetura pragmática</strong><p>Escolhas técnicas alinhadas ao problema de negócio e à manutenção a longo prazo.</p></div></div></aside>
         </div>
