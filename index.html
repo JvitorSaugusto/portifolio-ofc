@@ -16,8 +16,8 @@
       document.documentElement.classList.add('js-enabled');
       try {
         const savedTheme = localStorage.getItem('portfolio-theme');
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.dataset.theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+        // Define 'light' como padrão obrigatório se não houver tema salvo
+        document.documentElement.dataset.theme = savedTheme || 'light';
       } catch (_) {
         document.documentElement.dataset.theme = 'light';
       }
@@ -87,19 +87,20 @@
           <div class="system-card">
             <div class="system-card-header">
               <div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div>
-              <span class="mono">profile.py</span>
-              <span class="system-status"><span></span> online</span>
+              <span class="mono">worker_node.py</span>
+              <span class="system-status"><span></span> active</span>
             </div>
             <div class="system-code">
-              <p><span class="line-no">01</span> <span class="code-purple">class</span> <span class="code-green">Developer</span>:</p>
-              <p><span class="line-no">02</span> &nbsp; focus = [</p>
-              <p><span class="line-no">03</span> &nbsp;&nbsp; <span class="code-yellow">"backend"</span>,</p>
-              <p><span class="line-no">04</span> &nbsp;&nbsp; <span class="code-yellow">"automation"</span>,</p>
-              <p><span class="line-no">05</span> &nbsp;&nbsp; <span class="code-yellow">"applied_ai"</span></p>
-              <p><span class="line-no">06</span> &nbsp; ]</p>
-              <p class="code-comment"><span class="line-no">07</span> # construir, medir, melhorar.</p>
+              <p><span class="line-no">01</span> <span class="code-purple">@celery.task</span></p>
+              <p><span class="line-no">02</span> <span class="code-purple">async def</span> <span class="code-green">process_oee_metrics</span>(op_id):</p>
+              <p><span class="line-no">03</span> &nbsp;&nbsp; data = <span class="code-purple">await</span> db.fetch(op_id)</p>
+              <p><span class="line-no">04</span> &nbsp;&nbsp; state = agent.evaluate(data)</p>
+              <p><span class="line-no">05</span> </p>
+              <p><span class="line-no">06</span> &nbsp;&nbsp; <span class="code-purple">if</span> state.anomaly_detected:</p>
+              <p><span class="line-no">07</span> &nbsp;&nbsp;&nbsp;&nbsp; alert_system.dispatch(state)</p>
+              <p class="code-comment"><span class="line-no">08</span> # Integrando regras de negócio e IA</p>
             </div>
-            <div class="system-card-footer"><span>REST APIs</span><span>·</span><span>Containers</span><span>·</span><span>LLMs</span></div>
+            <div class="system-card-footer"><span>FastAPI</span><span>·</span><span>Celery</span><span>·</span><span>LLMs</span></div>
           </div>
           <div class="floating-note note-stack"><span class="note-icon">{ }</span><span><strong>Backend first</strong><small>Regra de negócio e arquitetura</small></span></div>
           <div class="floating-note note-ai"><span class="note-icon">✳</span><span><strong>IA aplicada</strong><small>Do dado à decisão</small></span></div>
@@ -126,8 +127,18 @@
             <p>Além do trabalho com regras de negócios e integrações (AWS, MES/OEE), estudo e desenvolvo projetos com <strong>LLMs locais, LangGraph e fluxos com agentes</strong>, buscando aplicar a inteligência artificial para resolver desafios reais de forma autônoma e útil.</p>
           </article>
           <aside class="about-facts" aria-label="Resumo profissional">
-            <div class="fact-card reveal reveal-delay-1"><span class="fact-number">03<span>+</span></span><span class="fact-label">anos em infraestrutura<br />e suporte de TI</span><span class="fact-index mono">BACKGROUND / 01</span></div>
-            <div class="fact-card fact-card-accent reveal reveal-delay-2"><span class="fact-symbol">↗</span><span class="fact-title">Do problema ao deploy</span><span class="fact-label">Desenvolvimento com visão de operação, não só de código.</span><span class="fact-index mono">MINDSET / 02</span></div>
+            <div class="fact-card reveal reveal-delay-1">
+              <span class="fact-symbol" style="font-size: 32px; color: var(--accent); margin-bottom: 6px;">⚙️</span>
+              <span class="fact-title">Código em Produção</span>
+              <span class="fact-label">APIs, automações e microsserviços rodando e resolvendo cenários reais.</span>
+              <span class="fact-index mono">DEV EXPERIENCE / 01</span>
+            </div>
+            <div class="fact-card fact-card-accent reveal reveal-delay-2">
+              <span class="fact-symbol">↗</span>
+              <span class="fact-title">Visão 360º</span>
+              <span class="fact-label">Anos de base em infraestrutura ajudam a criar sistemas à prova de falhas.</span>
+              <span class="fact-index mono">MINDSET / 02</span>
+            </div>
           </aside>
         </div>
       </div>
@@ -141,12 +152,12 @@
           <p class="section-intro">Minha base está no backend; a stack se expande conforme o problema pede.</p>
         </div>
         <div class="stack-grid">
-          <article class="stack-card reveal"><div class="stack-card-top"><span class="stack-icon stack-icon-green">Py</span><span class="stack-number mono">01</span></div><h3>Backend & APIs</h3><p>Construção de serviços, regras de negócio e APIs bem estruturadas.</p><div class="chip-list"><span>Python</span><span>Django</span><span>FastAPI</span><span>DRF</span><span>PHP</span><span>Laravel</span><span>SQLAlchemy</span></div></article>
+          <article class="stack-card reveal"><div class="stack-card-top"><span class="stack-icon stack-icon-green">Py</span><span class="stack-number mono">01</span></div><h3>Backend & APIs</h3><p>Construção de serviços, regras de negócio e APIs bem estruturadas.</p><div class="chip-list"><span>Python</span><span>Django</span><span>FastAPI</span><span>Java</span><span>Spring</span><span>PHP</span></div></article>
           <article class="stack-card reveal reveal-delay-1"><div class="stack-card-top"><span class="stack-icon stack-icon-violet">✳</span><span class="stack-number mono">02</span></div><h3>IA & LLMs</h3><p>Orquestração de modelos e integração de inteligência a fluxos de trabalho.</p><div class="chip-list"><span>LangGraph</span><span>LangChain</span><span>Ollama</span><span>RAG</span><span>Tool calling</span><span>Agentes</span></div></article>
-          <article class="stack-card reveal reveal-delay-2"><div class="stack-card-top"><span class="stack-icon stack-icon-blue">⌘</span><span class="stack-number mono">03</span></div><h3>Infra & processamento</h3><p>Ambientes reproduzíveis, tarefas assíncronas e execução confiável.</p><div class="chip-list"><span>Docker</span><span>Compose</span><span>Nginx</span><span>Celery</span><span>Redis</span></div></article>
+          <article class="stack-card reveal reveal-delay-2"><div class="stack-card-top"><span class="stack-icon stack-icon-blue">⌘</span><span class="stack-number mono">03</span></div><h3>Infra & Deploy</h3><p>Ambientes reproduzíveis, tarefas assíncronas e execução confiável.</p><div class="chip-list"><span>Docker</span><span>Celery</span><span>Nginx</span><span>Redis</span><span>Git</span></div></article>
           <article class="stack-card reveal"><div class="stack-card-top"><span class="stack-icon stack-icon-amber">◫</span><span class="stack-number mono">04</span></div><h3>Dados & integração</h3><p>Persistência, consulta e integração entre serviços e sistemas.</p><div class="chip-list"><span>PostgreSQL</span><span>MySQL</span><span>SQLite</span><span>ETL</span><span>REST</span></div></article>
           <article class="stack-card reveal reveal-delay-1"><div class="stack-card-top"><span class="stack-icon stack-icon-rose">{ }</span><span class="stack-number mono">05</span></div><h3>Frontend de produto</h3><p>Interfaces funcionais para entregar uma experiência completa ao usuário.</p><div class="chip-list"><span>JavaScript</span><span>Next.js</span><span>HTML</span><span>CSS</span></div></article>
-          <article class="stack-card reveal reveal-delay-2"><div class="stack-card-top"><span class="stack-icon stack-icon-neutral">J</span><span class="stack-number mono">06</span></div><h3>Em evolução</h3><p>Conhecimentos complementares usados em estudos e projetos.</p><div class="chip-list"><span>Java</span><span>Spring Boot</span><span>Git</span><span>GitHub</span></div></article>
+          <article class="stack-card reveal reveal-delay-2"><div class="stack-card-top"><span class="stack-icon stack-icon-neutral">↻</span><span class="stack-number mono">06</span></div><h3>Em aprofundamento</h3><p>Tecnologias que utilizo no serviço e venho expandindo nos estudos.</p><div class="chip-list"><span>Next.js</span><span>React</span><span>AWS</span><span>Nginx avançado</span></div></article>
         </div>
       </div>
     </section>

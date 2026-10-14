@@ -74,7 +74,21 @@ svg { display: block; }
 .site-header { position: sticky; top: 0; z-index: 100; border-bottom: 1px solid color-mix(in srgb, var(--line) 78%, transparent); background: var(--header-bg); backdrop-filter: blur(18px); }
 .header-inner { position: relative; min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
 .brand { display: inline-flex; align-items: center; gap: 12px; flex-shrink: 0; }
-.brand-mark { width: 43px; height: 43px; display: grid; place-items: center; border-radius: 13px; background: var(--accent); color: white; font-size: 15px; font-weight: 800; letter-spacing: -.08em; box-shadow: 0 6px 15px color-mix(in srgb, var(--accent) 22%, transparent); }
+.brand-mark { 
+  width: 43px; 
+  height: 43px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  border-radius: 13px; 
+  background: var(--accent); 
+  color: white; 
+  font-size: 15px; 
+  font-weight: 800; 
+  letter-spacing: -.08em; 
+  box-shadow: 0 6px 15px color-mix(in srgb, var(--accent) 22%, transparent);
+  line-height: 1; 
+}
 .brand-mark span, .footer-brand span { color: #bde9cd; }
 .brand-name { color: var(--text-strong); font-size: 13px; font-weight: 800; letter-spacing: -.02em; }
 .brand-name span { color: var(--muted); font-weight: 500; }
@@ -96,7 +110,15 @@ svg { display: block; }
 
 /* Hero */
 .hero { position: relative; overflow: hidden; padding-top: 105px; padding-bottom: 46px; }
-.hero-grid-pattern { position: absolute; inset: 0 0 80px; pointer-events: none; opacity: .65; background-image: linear-gradient(color-mix(in srgb, var(--line) 43%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--line) 43%, transparent) 1px, transparent 1px); background-size: 42px 42px; mask-image: linear-gradient(to bottom, black, transparent 92%); }
+.hero-grid-pattern { 
+  position: absolute; 
+  inset: 0 0 80px; 
+  pointer-events: none; 
+  opacity: .75; 
+  background-image: radial-gradient(color-mix(in srgb, var(--line-strong) 85%, transparent) 1px, transparent 1px); 
+  background-size: 26px 26px; 
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 0%, black 10%, transparent 80%); 
+}
 .hero-layout { position: relative; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(420px, .95fr); align-items: center; gap: clamp(44px, 7vw, 90px); }
 .hero-copy { padding-block: 10px 22px; }
 .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 26px; padding: 8px 11px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface); color: var(--muted-strong); font-size: 10px; letter-spacing: .1em; }
