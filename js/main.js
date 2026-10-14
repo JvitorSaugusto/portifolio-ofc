@@ -51,6 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  // Sincroniza estado inicial sem sobrescrever o localStorage
+  applyTheme(root.dataset.theme || 'light', false);
+
   themeToggle?.addEventListener('click', () => {
     applyTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
   });
